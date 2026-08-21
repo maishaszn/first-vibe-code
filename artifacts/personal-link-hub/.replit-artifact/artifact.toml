@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Personal Link Hub"
+description = "A minimal, mobile-friendly personal link hub with a profile section and four external links that open in new tabs."
+version = "1.0.0"
+id = "artifacts/personal-link-hub"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23186
+
+[services.development]
+run = "pnpm --filter @workspace/personal-link-hub run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/personal-link-hub", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/personal-link-hub/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23186"
+BASE_PATH = "/"

@@ -13,7 +13,7 @@ import {
  */
 const PROFILE = {
   name: 'Ayesha',
-  role: 'Writer, image-maker, occasional wanderer',
+  role: 'Writer, clipper, degen',
   bio: 'Taking things one step at a time',
 };
 
@@ -65,7 +65,7 @@ function Home() {
               className="font-sans text-[11px] uppercase tracking-[0.18em] text-foreground/55"
               data-testid="text-edition"
             >
-              2024—25
+              2025 - Till date
             </span>
           </header>
 
@@ -192,7 +192,7 @@ function Home() {
         <footer className="mt-20 border-t border-foreground/20 pt-5 lg:col-span-2 lg:mt-4">
           <div className="flex flex-col gap-2 font-sans text-[10px] uppercase tracking-[0.18em] text-foreground/45 sm:flex-row sm:items-center sm:justify-between">
             <span data-testid="text-footer-signature">Made slowly, shared openly</span>
-             <span data-testid="text-footer-year">© 2025 {PROFILE.name}</span>
+             <span data-testid="text-footer-year">© 2026 {PROFILE.name}</span>
           </div>
         </footer>
       </main>

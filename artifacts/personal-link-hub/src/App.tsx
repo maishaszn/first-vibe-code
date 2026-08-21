@@ -1,8 +1,8 @@
 import {
   ArrowUpRight,
-  BookOpen,
+  Github,
   Instagram,
-  Linkedin,
+  Mail,
   Twitter,
 } from 'lucide-react';
 
@@ -12,37 +12,35 @@ import {
  * can be changed without touching the layout.
  */
 const PROFILE = {
-  name: 'Alma Moreno',
+  name: 'Ayesha',
   role: 'Writer, image-maker, occasional wanderer',
-  bio: 'Notes on making a life with more room for wonder.',
-  location: 'Lisbon · everywhere',
-  initials: 'AM',
+  bio: 'Taking things one step at a time',
 };
 
 const LINKS = [
   {
-    label: 'Instagram',
-    detail: '@almamakes',
-    href: 'https://www.instagram.com/',
-    icon: Instagram,
-  },
-  {
-    label: 'X',
-    detail: '@almoreno',
-    href: 'https://x.com/',
+    label: 'Twitter',
+    detail: '@maishaszn',
+    href: 'https://x.com/maishaszn',
     icon: Twitter,
   },
   {
-    label: 'LinkedIn',
-    detail: 'alma-moreno',
-    href: 'https://www.linkedin.com/',
-    icon: Linkedin,
+    label: 'GitHub',
+    detail: 'github.com/maishaszn',
+    href: 'https://github.com/maishaszn',
+    icon: Github,
   },
   {
-    label: 'The Sunday Letter',
-    detail: 'a small note, every other week',
-    href: 'https://buttondown.com/',
-    icon: BookOpen,
+    label: 'Instagram',
+    detail: '@maishaszn',
+    href: 'https://www.instagram.com/maishaszn',
+    icon: Instagram,
+  },
+  {
+    label: 'Email',
+    detail: 'mobola.adeniran@gmail.com',
+    href: 'mailto:mobola.adeniran@gmail.com',
+    icon: Mail,
   },
 ];
 
@@ -73,10 +71,13 @@ function Home() {
 
           <div className="mt-14 sm:mt-20 lg:my-auto lg:mt-0">
             <div
-              className="profile-mark mark-in flex h-24 w-24 items-center justify-center rounded-full border border-foreground/35 text-3xl text-foreground shadow-sm sm:h-28 sm:w-28 sm:text-4xl"
-              aria-hidden="true"
+              className="profile-mark mark-in h-24 w-24 overflow-hidden rounded-full border border-foreground/35 shadow-sm sm:h-28 sm:w-28"
             >
-              <span className="font-serif italic">{PROFILE.initials}</span>
+              <img
+                src={`${import.meta.env.BASE_URL}profile.jpg`}
+                alt={`${PROFILE.name} profile`}
+                className="h-full w-full object-cover"
+              />
             </div>
 
             <p
@@ -97,12 +98,6 @@ function Home() {
               data-testid="text-profile-bio"
             >
               {PROFILE.bio}
-            </p>
-            <p
-              className="mt-5 font-sans text-[11px] uppercase tracking-[0.2em] text-foreground/55"
-              data-testid="text-profile-location"
-            >
-              {PROFILE.location}
             </p>
           </div>
 
@@ -135,7 +130,7 @@ function Home() {
             </span>
           </div>
 
-          <nav aria-label="Alma Moreno's external links">
+           <nav aria-label={`${PROFILE.name}'s external links`}>
             <ul className="m-0 list-none space-y-3 p-0 sm:space-y-4">
               {LINKS.map((link, index) => {
                 const Icon = link.icon;
@@ -197,7 +192,7 @@ function Home() {
         <footer className="mt-20 border-t border-foreground/20 pt-5 lg:col-span-2 lg:mt-4">
           <div className="flex flex-col gap-2 font-sans text-[10px] uppercase tracking-[0.18em] text-foreground/45 sm:flex-row sm:items-center sm:justify-between">
             <span data-testid="text-footer-signature">Made slowly, shared openly</span>
-            <span data-testid="text-footer-year">© 2025 Alma Moreno</span>
+             <span data-testid="text-footer-year">© 2025 {PROFILE.name}</span>
           </div>
         </footer>
       </main>
